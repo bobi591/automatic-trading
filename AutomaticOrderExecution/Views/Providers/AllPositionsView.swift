@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 import DeckKit
 
-struct AllPositionsView<T: Position & DeckItem>: View {
-    @State var positions: [T]
+struct AllPositionsView: View {
+    @State var positions: [AnyPosition]
 
     var body: some View {
         DeckView($positions) { position in
@@ -39,5 +39,5 @@ struct AllPositionsView<T: Position & DeckItem>: View {
 }
 
 #Preview {
-    AllPositionsView(positions: [Trading212Position(averagePrice: 100, currentPrice: 100, initialFillDate: "2024-07-19T17:45:01.000+03:00", quantity: 30, ppl: 12, fxPpl: 50, ticker: "AAPL"), Trading212Position(averagePrice: 100, currentPrice: 100, initialFillDate: "2024-05-19T17:45:01.000+03:00", quantity: 30, ppl: 12, fxPpl: 50, ticker: "MSFT")])
+    AllPositionsView(positions: [AnyPosition(position: Trading212Position(averagePrice: 100, currentPrice: 100, initialFillDate: "2024-07-19T17:45:01.000+03:00", quantity: 30, ppl: 12, fxPpl: 50, ticker: "AAPL")), AnyPosition(position: Trading212Position(averagePrice: 100, currentPrice: 100, initialFillDate: "2024-05-19T17:45:01.000+03:00", quantity: 30, ppl: 12, fxPpl: 50, ticker: "MSFT"))])
 }

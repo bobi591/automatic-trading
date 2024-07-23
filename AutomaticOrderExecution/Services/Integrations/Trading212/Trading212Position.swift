@@ -8,7 +8,6 @@
 import Foundation
 
 public struct Trading212Position: Position {
-    
     public var id = UUID()
     
     let averagePrice: Decimal
@@ -22,7 +21,11 @@ public struct Trading212Position: Position {
     private enum CodingKeys: String, CodingKey {
         case averagePrice, currentPrice, initialFillDate, quantity, ppl, fxPpl, ticker
     }
-
+    
+    public func getId() -> UUID {
+        return id
+    }
+    
     public func getAveragePrice() -> Decimal {
         return averagePrice
     }

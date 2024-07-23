@@ -8,16 +8,14 @@
 import Foundation
 
 public protocol PositionProvider {
-    associatedtype PositionType: Position
-
-    func allPositions() async throws -> [PositionType]
-    func specificPosition(ticker: String) async throws -> PositionType
+    func allPositions() async throws -> [AnyPosition]
+    func specificPosition(ticker: String) async throws -> AnyPosition
 
     var positionsUrl: String { get }
 }
 
 public extension PositionProvider {
-    func allPositionsAsync(completion: @escaping (Result<[any Position], Error>) -> Void) {
+    func allPositionsAsync(completion: @escaping (Result<[AnyPosition], Error>) -> Void) {
         Task {
             do {
                 let data = try await allPositions()

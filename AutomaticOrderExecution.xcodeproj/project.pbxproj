@@ -33,6 +33,8 @@
 		7E6C64F32C4D9AD900B678A2 /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6C64F12C4D9AD500B678A2 /* KeychainUtils.swift */; };
 		7E6C64F52C4D9B8600B678A2 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 7E6C64F42C4D9B8600B678A2 /* KeychainAccess */; };
 		7E6C64F92C4DB00A00B678A2 /* ProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6C64F82C4DB00A00B678A2 /* ProviderView.swift */; };
+		7E6EFFAD2C500ECD001C7C83 /* AnyPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6EFFAC2C500ECD001C7C83 /* AnyPosition.swift */; };
+		7E6EFFAE2C5013E3001C7C83 /* AnyPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6EFFAC2C500ECD001C7C83 /* AnyPosition.swift */; };
 		7EAE45F52C4EFC3D00C9EFBA /* KeychainUpdateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE45F42C4EFC3D00C9EFBA /* KeychainUpdateButton.swift */; };
 		7EAE45F72C4F08FA00C9EFBA /* AllPositionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE45F62C4F08FA00C9EFBA /* AllPositionsView.swift */; };
 		7EAE46022C4F184F00C9EFBA /* DeckKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7EAE46012C4F184F00C9EFBA /* DeckKit */; };
@@ -76,6 +78,7 @@
 		7E6C64E32C4D7C6600B678A2 /* Trading212PositionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trading212PositionServiceTests.swift; sourceTree = "<group>"; };
 		7E6C64F12C4D9AD500B678A2 /* KeychainUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUtils.swift; sourceTree = "<group>"; };
 		7E6C64F82C4DB00A00B678A2 /* ProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderView.swift; sourceTree = "<group>"; };
+		7E6EFFAC2C500ECD001C7C83 /* AnyPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPosition.swift; sourceTree = "<group>"; };
 		7EAE45F42C4EFC3D00C9EFBA /* KeychainUpdateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUpdateButton.swift; sourceTree = "<group>"; };
 		7EAE45F62C4F08FA00C9EFBA /* AllPositionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPositionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +187,7 @@
 			children = (
 				7E1CEEA82C4BC4E000E73359 /* PositionProvider.swift */,
 				7E1CEEAB2C4BC51400E73359 /* Position.swift */,
+				7E6EFFAC2C500ECD001C7C83 /* AnyPosition.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -428,6 +432,7 @@
 				7EAE45F72C4F08FA00C9EFBA /* AllPositionsView.swift in Sources */,
 				7E1CEEA92C4BC4E000E73359 /* PositionProvider.swift in Sources */,
 				7E562F202C4BC953002A6F55 /* Trading212PositionService.swift in Sources */,
+				7E6EFFAD2C500ECD001C7C83 /* AnyPosition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +449,7 @@
 				7E6C64E42C4D7C6600B678A2 /* Trading212PositionServiceTests.swift in Sources */,
 				7E6C64F32C4D9AD900B678A2 /* KeychainUtils.swift in Sources */,
 				7E6C64D72C4D566F00B678A2 /* RestUtilsTests.swift in Sources */,
+				7E6EFFAE2C5013E3001C7C83 /* AnyPosition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

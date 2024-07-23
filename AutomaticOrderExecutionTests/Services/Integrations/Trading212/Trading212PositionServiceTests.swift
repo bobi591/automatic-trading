@@ -17,7 +17,7 @@ final class Trading212PositionServiceTests: XCTestCase {
     }
     
     func testAllPositions() async throws {
-        let expectedResult: [Trading212Position] = [Trading212Position(averagePrice: 100, currentPrice: 100, initialFillDate: "2024-07-19T17:45:01.000+03:00", quantity: 10, ppl: 100.50, fxPpl: -10.5, ticker: "AAPL")]
+        let expectedResult: [AnyPosition] = [AnyPosition(position: Trading212Position(averagePrice: 100, currentPrice: 100, initialFillDate: "2024-07-19T17:45:01.000+03:00", quantity: 10, ppl: 100.50, fxPpl: -10.5, ticker: "AAPL"))]
         
         let positionProvider: Trading212PositionService = Trading212PositionService()
         
@@ -27,7 +27,7 @@ final class Trading212PositionServiceTests: XCTestCase {
             return HTTPStubsResponse(data: stubData, statusCode: 200, headers: nil)
         }
         
-        let result: [Trading212Position] = try! await positionProvider.allPositions();
+        let result: [AnyPosition] = try! await positionProvider.allPositions();
         
         XCTAssertNotNil(result, "Result not nil.")
         XCTAssertTrue(result.count == 1, "Result size equal to 1.")

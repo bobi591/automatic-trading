@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 
-struct ProviderView<T: Position>: View {
+struct ProviderView: View {
     
     @StateObject var providerViewState: ProviderViewState = ProviderViewState()
-    @State var positionsState: [T] = []
+    @State var positionsState: [AnyPosition] = []
     @State var errorState: ErrorState?
     
     let selectedProvider: ProviderType

@@ -8,7 +8,8 @@
 import Foundation
 import DeckKit
 
-public protocol Position: Codable, Equatable, DeckItem {
+public protocol Position: Codable, Equatable, DeckItem, Identifiable {
+    func getId() -> UUID
     func getAveragePrice() -> Decimal
     func getCurrentPrice() -> Decimal
     func getFillDate() -> Date

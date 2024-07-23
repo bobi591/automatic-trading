@@ -14,7 +14,7 @@ public class Trading212PositionService: PositionProvider {
         return _positionsUrl
     }
 
-    public func allPositions() async throws -> [Trading212Position] {
+    public func allPositions() async throws -> [AnyPosition] {
         guard let apiKey = try KeychainUtils.retrieve(KeychainUtils.Keys.apiKeyTrading212) else {
             throw Trading212PositionServiceError.apiKeyNotFound
         }
@@ -28,7 +28,9 @@ public class Trading212PositionService: PositionProvider {
 
             // Assuming Trading212Position conforms to Position protocol
             let positionsList: [Trading212Position] = result
-            return positionsList
+            return positionsList.map { position in
+                return AnyPosition(position: position)
+            }
 
         } catch let DecodingError.typeMismatch(type, context)  {
             print("Type '\(type)' mismatch:", context.debugDescription)
@@ -44,7 +46,7 @@ public class Trading212PositionService: PositionProvider {
          }
     }
 
-    public func specificPosition(ticker: String) async throws -> Trading212Position {
+    public func specificPosition(ticker: String) async throws -> AnyPosition {
         throw fatalError("Not implemented!")
     }
 }
