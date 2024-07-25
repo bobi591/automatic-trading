@@ -35,15 +35,21 @@ struct ProviderView: View {
                     .padding()
                     Spacer()
                 }
-                Spacer()
-                VStack {
-                    Text(selectedProvider.rawValue)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .padding()
+                Text(selectedProvider.rawValue)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding()
+                if !positionsState.isEmpty {
                     AllPositionsView(positions: positionsState)
+                } else {
+                    if let error = errorState?.error {
+                        ProgressView()
+                    }
+                    else {
+                        Text("Could not fetch data from " + selectedProvider.rawValue + " 😔")
+                    }
                 }
-                .padding()
+                Spacer()
             }
             .alert(item: $errorState) { errorState in
                 Alert(title: Text("Provider error"), message: Text(errorState.error.localizedDescription), dismissButton: .cancel())
